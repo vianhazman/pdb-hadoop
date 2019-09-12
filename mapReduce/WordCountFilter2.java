@@ -18,7 +18,7 @@ public class WordCount {
             Text word = new Text();
             while (itr.hasMoreTokens()) {
                 word.set(itr.nextToken());
-                context.write(word, one);
+                if (word.toString().length() > 3) context.write(word, one);
             }
         }
     }
@@ -30,7 +30,7 @@ public class WordCount {
             for (IntWritable val : values) {
                 sum += val.get();
             }
-            if (sum > 1) result.set(sum);
+            result.set(sum);
             context.write(key, result);
         }
     }

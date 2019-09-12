@@ -30,8 +30,8 @@ public class WordCountFilter1 {
             for (IntWritable val : values) {
                 sum += val.get();
             }
-            if (sum > 1) result.set(sum);
-            context.write(key, result);
+            result.set(sum);
+            if (sum > 1) context.write(key, result);
         }
     }
     public static void main(String[] args) throws Exception {

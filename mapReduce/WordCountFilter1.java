@@ -9,7 +9,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-public class WordCountFilter1 {
+public class WordCountFilter1 { add . a
     public static class MyMapper extends Mapper<Object, Text, Text, IntWritable> {
         public void map(Object key, Text value, Context context)
                 throws IOException, InterruptedException {
@@ -33,6 +33,7 @@ public class WordCountFilter1 {
             if (sum > 1) {
                 result.set(sum);
                 context.write(key, result);
+            }
         }
     }
     public static void main(String[] args) throws Exception {

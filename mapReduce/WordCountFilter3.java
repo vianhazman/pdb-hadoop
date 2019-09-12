@@ -18,7 +18,7 @@ public class WordCountFilter3 {
             Text word = new Text();
             while (itr.hasMoreTokens()) {
                 word.set(itr.nextToken());
-                word.set(word.toString().toLowerCase().replaceAll("[^a-zA-Z0-9]",""))
+                word.set(word.toString().toLowerCase().replaceAll("[^a-zA-Z0-9]",""));
                 context.write(word, one);
             }
         }

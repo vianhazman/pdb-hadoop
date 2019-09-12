@@ -37,7 +37,7 @@ public class WordCountFilter2 {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf, "word count");
-        job.setJarByClass(WordCount.class);
+        job.setJarByClass(WordCountFilter2.class);
         job.setMapperClass(MyMapper.class);
         job.setCombinerClass(MyReducer.class);
         job.setReducerClass(MyReducer.class);
